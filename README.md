@@ -5,6 +5,7 @@
 2. [Initial Variables Setup](#initial-variables-setup)
 3. [AWS Deployment](#aws-deployment)
 4. [Remarks](#remarks)
+5. [Bonus - CloudFormation](#bonus---cloudformation)
 
 ## Assumptions
 1. **Handling Missing Prices (Q1):**
@@ -65,3 +66,11 @@
 - **Other:**
    - Null values in the specified subset ("date" and "ticker") are eliminated from the dataset to maintain data integrity for further analysis. The number of removed rows is logged for reference.
    - Results and intermediate data are stored in well-structured folders within the S3 Bucket, ensuring a clear and organized layout for easy navigation and future reference.
+
+## Bonus - CloudFormation
+
+I successfully deployed and tested a CloudFormation stack using a YAML file in my personal AWS environment. However, replication in the home assignment environment encountered IAM role and permissions issues. Despite multiple role and configuration adjustments, the errors persisted.
+
+For clarity, I've provided a folder named "Cloud-Formation," containing the YAML file and a snapshot of the AWS environment post-deployment. This documentation aims to showcase my troubleshooting efforts in addressing the issues.
+
+Given more time and access to IAM roles,  I would establish a stack resembling the configuration in my personal environment.
