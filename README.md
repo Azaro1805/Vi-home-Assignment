@@ -45,7 +45,7 @@
          - Partitioned by year, month, and day.
 
 3. **Athena Querying:**
-   - Make results queryable from [Athena]([https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor](https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor)).
+   - Make results queryable from [Athena](https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor).
 
 ## Remarks
 - **Efficient Data Organization and Flexibility:** 
