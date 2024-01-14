@@ -65,8 +65,8 @@
   - Athena leverages partitions to optimize query performance by scanning only relevant data subsets, leading to cost-efficient data processing as users are billed based on the reduced amount of data scanned.
   
 - **Organized Functions:**
-  - Analysis-related functions are structured in distinct notebook cells, enhancing maintainability. The plan for the future involves moving these functions to a utility file.
-  - Crawler-related utilities are organized into notebook cells, setting the stage for future consolidation into a dedicated controller for enhanced manageability.
+  - Analysis-related functions are structured in distinct cells, enhancing maintainability. The plan for the future involves moving these functions to a utility file.
+  - Crawler-related utilities are organized into cells, setting the stage for future consolidation into a dedicated controller for enhanced manageability.
    
 - **Cost Optimization:**
   - The number of job nodes has been reduced from the default 10 to 2, ensuring a cost-effective setup. In the future, adjustments may be made based on evolving requirements or resource needs.
