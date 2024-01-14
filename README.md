@@ -50,9 +50,11 @@
      
 ## Remarks
 
-- **Efficient Data Organization and Flexibility:** Partitioning organizes data into subdirectories based on specific criteria, like time-based or categorical attributes, ensuring efficient organization and providing flexibility for granular data analysis.
+- **Efficient Data Organization and Flexibility:** 
+  - Partitioning organizes data into subdirectories based on specific criteria, like time-based or categorical attributes, ensuring efficient organization and providing flexibility for granular data analysis.
 
-- **Optimized Query Performance and Cost Efficiency:** Athena leverages partitions to optimize query performance by scanning only relevant data subsets, leading to cost-efficient data processing as users are billed based on the reduced amount of data scanned.
+- **Optimized Query Performance and Cost Efficiency:** 
+  - Athena leverages partitions to optimize query performance by scanning only relevant data subsets, leading to cost-efficient data processing as users are billed based on the reduced amount of data scanned.
   
 - **Organized Functions:**
   - Analysis-related functions are structured in distinct notebook cells, enhancing maintainability. The plan for the future involves moving these functions to a utility file.
