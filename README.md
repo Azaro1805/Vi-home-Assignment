@@ -6,7 +6,6 @@
 3. [AWS Deployment](#aws-deployment)
 4. [Remarks](#remarks)
 
-5. 
 
 ## Assumptions
 1. **Handling Missing Prices (Q1):**
@@ -24,10 +23,14 @@
 4. - **Cost Optimization Note:**
   - The number of nodes has been reduced from the default 10 to 2 for cost optimization. If time sensitivity for the home assignment grade arises, please revert to the default setting of 10 nodes.
 
+
+
 ## Initial Variables Setup:
   - **File Name:** `stock_prices.csv` is the required file in the S3 bucket (your bucket) under the "original_files" folder. If modified or changed, update the `file_name` variable accordingly.
   - **Crawler Wait:** By default, the job doesn't wait for the crawler to complete (`wait_to_crawler = False`). Change this variable to `True` if you want the job to wait for the crawler's successful execution.
-  - 
+    
+
+
 ## AWS Deployment
 
 1. **Results Storage in S3 Bucket:**
@@ -52,6 +55,7 @@
    - Make results queryable from [Athena](https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor).
 
      
+
 ## Remarks
 
 - **Efficient Data Organization and Flexibility:** 
