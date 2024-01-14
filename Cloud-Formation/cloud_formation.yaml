@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+    ModelEvaluationRoleArn:
+        Type: String
+        Description: ARN of the IAM role for model evaluation
+        Default: 'arn:aws:iam::639606532074:role/or-azar-model-evaluationRole'
+
+Resources:
+    MyS3Bucket:
+        Type: 'AWS::S3::Bucket'
+        Properties:
+            BucketName: 'aws-glue-or-azar-cf'
+
+    MyGlueDatabase:
+        Type: 'AWS::Glue::Database'
+        Properties:
+            CatalogId: !Ref 'AWS::AccountId'
+            DatabaseInput:
+                Name: 'aws-glue-or-azar-db-cf'
+
+    MyGlueJob:
+        Type: 'AWS::Glue::Job'
+        Properties:
+            Command:
+                Name: glueetl
+                ScriptLocation: 's3://dms-replica-to-s3/tests/glue/vi_ha/spark_job.py'
+            Role: !Ref ModelEvaluationRoleArn
+            ExecutionProperty:
+                MaxConcurrentRuns: 1
+            GlueVersion: '2.0'
+            MaxRetries: 0
+            Name: 'aws-glue-or-azar-job-cf'
+
+    MyGlueCrawler:
+        Type: 'AWS::Glue::Crawler'
+        Properties:
+            Name: 'aws-glue-or-azar-crawler-cf'
+            Role: !Ref ModelEvaluationRoleArn
+            DatabaseName: !Ref MyGlueDatabase
+            Targets:
+                S3Targets:
+                    - Path: 's3://dms-replica-to-s3/tests/glue/vi_ha/datasets/average_daily_return/'
+                    - Path: 's3://dms-replica-to-s3/tests/glue/vi_ha/datasets/avg_frequently/'
+                    - Path: 's3://dms-replica-to-s3/tests/glue/vi_ha/datasets/stock_prices_30_days_of_return/'
+                    - Path: 's3://dms-replica-to-s3/tests/glue/vi_ha/datasets/volatility_annualized_std/'
+
+Outputs:
+    S3BucketName:
+        Value: !Ref MyS3Bucket
+        Description: 'Name of the created S3 bucket'
+
+    GlueDatabaseName:
+        Value: !Ref MyGlueDatabase
+        Description: 'Name of the created Glue Database'
+
+    GlueJobName:
+        Value: !Ref MyGlueJob
+        Description: 'Name of the created Glue Job'
+
+    GlueCrawlerName:
+        Value: !Ref MyGlueCrawler
+        Description: 'Name of the created Glue Crawler'
