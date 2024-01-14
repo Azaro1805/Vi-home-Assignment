@@ -18,14 +18,14 @@
    - The last available day is determined based on the approach mentioned in Q1.
 
 3. **Result File Completeness Assumption:**
-   - Assumed that saved files encompass the entire dataset with relevant fields, not limited to the top 1 or top 3 records.
+   - Assumed that saved files encompass the entire dataset with relevant fields, not only the top 1 or top 3 records.
 
 4. **Cost Optimization Note:**
    - The number of nodes has been reduced from the default 10 to 2 for cost optimization. If time sensitivity for the home assignment grade arises, please revert to the default setting of 10 nodes.
 
 ## Initial Variables Setup
 - **File Name:** `stock_prices.csv` is the required file in the S3 bucket ([S3 Bucket](https://s3.console.aws.amazon.com/s3/buckets/aws-glue-home-assignment-or-azar?region=us-east-1&bucketType=general&tab=objects)) under the "original_files" folder. If modified or changed, update the `file_name` variable accordingly.
-- **Crawler Wait:** By default, the job doesn't wait for the crawler to complete (`wait_to_crawler = False`). Change this variable to `True` if you want the job to wait for the crawler's successful execution.
+- **Crawler Wait:** By default, the job doesn't wait for the crawler to complete (`wait_to_crawler = False`). Change this variable to `True` if you want the job to wait for the crawler until the run is finished.
 
 ## AWS Deployment
 1. **Glue Job:**
