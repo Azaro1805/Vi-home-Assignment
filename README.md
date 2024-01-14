@@ -36,7 +36,8 @@
 
 3. **Glue Catalog Table Mapping:**
    - Glue Catalog Table mapping for each result file is created in the [Glue Catalog Database](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases/view/aws-glue-home-assignment-or-azar-db?catalogId=249751718460). 
-      Name: "aws-glue-home-assignment-or-azar-db"
+      
+   Name: "aws-glue-home-assignment-or-azar-db"
       - **Average Daily Return Table:**
          - Partitioned by year.
       - **Average Frequently Table:**
