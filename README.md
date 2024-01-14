@@ -27,14 +27,14 @@
 - **Crawler Wait:** By default, the job doesn't wait for the crawler to complete (`wait_to_crawler = False`). Change this variable to `True` if you want the job to wait for the crawler's successful execution.
 
 ## AWS Deployment
-1. **Glue job:**
+1. **Glue Job:**
    - I made a Glue job with prints [link_to_glue_job](https://us-east-1.console.aws.amazon.com/gluestudio/home?region=us-east-1#/editor/job/aws-glue-home-assignment-or-azar/script)
 
 2. **Results Storage in S3 Bucket:**
    - Results and intermediate data are stored in the [S3 Bucket](https://s3.console.aws.amazon.com/s3/buckets/aws-glue-home-assignment-or-azar?region=us-east-1&bucketType=general&tab=objects).
 
 3. **Glue Catalog Table Mapping:**
-   - Glue Catalog Table mapping for each result file is created in the [Glue Catalog Database](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases/view/aws-glue-home-assignment-or-azar-db?catalogId=249751718460).
+   - Glue Catalog Table mapping for each result file is created in the [Glue Catalog Database](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases/view/aws-glue-home-assignment-or-azar-db?catalogId=249751718460). Name: "aws-glue-home-assignment-or-azar-db"
       - **Average Daily Return Table:**
          - Partitioned by year.
       - **Average Frequently Table:**
@@ -44,8 +44,8 @@
       - **Stock Prices 30 Days of Return Table:**
          - Partitioned by year, month, and day.
 
-3. **Athena Querying:**
-   - Make results queryable from [Athena](https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor).
+4. **Athena Querying:**
+   - Make results queryable from [Athena](https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor). (Make sure that the DB is: "aws-glue-home-assignment-or-azar-db")
 
 ## Remarks
 - **Efficient Data Organization and Flexibility:** 
