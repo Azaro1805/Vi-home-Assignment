@@ -33,27 +33,33 @@
    - Glue Catalog Table mapping for each result file is created in the [Glue Catalog Database](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases/view/aws-glue-home-assignment-or-azar?catalogId=249751718460).
 
    - **Average Daily Return Table:**
-      - **Partitioning:**
-         - Partitioned by year.
+      - Partitioned by year.
 
    - **Average Frequently Traded Stock Table:**
-      - **Partitioning:**
-         - Partitioned by the first letter of the stock name.
+      - Partitioned by the first letter of the stock name.
 
    - **Most Volatile Stock Table:**
-      - **Partitioning:**
-         - Partitioned by year.
+      - Partitioned by year.
 
    - **30-Day Return Dates Table:**
-      - **Partitioning:**
-         - Partitioned by year, month, and day.
+      - Partitioned by year, month, and day.
 
 3. **Athena Querying:**
    - Make results queryable from [Athena](https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor).
 
-## 3. Athena Querying
-   - Make results queryable from [Athena](https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor).
+     
+## Remarks
 
-### Remarks
-1. add here
+- **Efficient Data Organization and Flexibility:** Partitioning organizes data into subdirectories based on specific criteria, like time-based or categorical attributes, ensuring efficient organization and providing flexibility for granular data analysis.
 
+- **Optimized Query Performance and Cost Efficiency:** Athena leverages partitions to optimize query performance by scanning only relevant data subsets, leading to cost-efficient data processing as users are billed based on the reduced amount of data scanned.
+  
+- **Organized Functions:**
+  - Analysis-related functions are structured in distinct notebook cells, enhancing maintainability. The plan for the future involves moving these functions to a utility file.
+  - Crawler-related utilities are organized into notebook cells, setting the stage for future consolidation into a dedicated controller for enhanced manageability.
+   
+- **Cost Optimization:**
+ - The number of job nodes has been reduced from the default 5 to 2, ensuring a cost-effective setup. In the future, adjustments may be made based on evolving requirements or resource needs.      
+
+- Rows with null values in the specified subset ("date" and "ticker") are removed, ensuring data integrity for subsequent analysis.
+- Results and intermediate data are stored in well-structured folders within the S3 Bucket, ensuring a clear and organized layout for easy navigation and future reference.
