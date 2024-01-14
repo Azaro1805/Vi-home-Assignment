@@ -63,6 +63,6 @@
 - **Cost Optimization:**
   - The number of job nodes has been reduced from the default 5 to 2, ensuring a cost-effective setup. In the future, adjustments may be made based on evolving requirements or resource needs.
     
-- ** Other: **
+- **Other:**
   - Rows with null values in the specified subset ("date" and "ticker") are removed, ensuring data integrity for subsequent analysis.
   - Results and intermediate data are stored in well-structured folders within the S3 Bucket, ensuring a clear and organized layout for easy navigation and future reference.
