@@ -61,7 +61,8 @@
   - Crawler-related utilities are organized into notebook cells, setting the stage for future consolidation into a dedicated controller for enhanced manageability.
    
 - **Cost Optimization:**
- - The number of job nodes has been reduced from the default 5 to 2, ensuring a cost-effective setup. In the future, adjustments may be made based on evolving requirements or resource needs.      
-
-- Rows with null values in the specified subset ("date" and "ticker") are removed, ensuring data integrity for subsequent analysis.
-- Results and intermediate data are stored in well-structured folders within the S3 Bucket, ensuring a clear and organized layout for easy navigation and future reference.
+  - The number of job nodes has been reduced from the default 5 to 2, ensuring a cost-effective setup. In the future, adjustments may be made based on evolving requirements or resource needs.
+    
+- ** Other: **
+  - Rows with null values in the specified subset ("date" and "ticker") are removed, ensuring data integrity for subsequent analysis.
+  - Results and intermediate data are stored in well-structured folders within the S3 Bucket, ensuring a clear and organized layout for easy navigation and future reference.
