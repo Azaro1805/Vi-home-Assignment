@@ -59,5 +59,5 @@
    - The number of job nodes has been reduced from the default 10 to 2, ensuring a cost-effective setup. In the future, adjustments may be made based on evolving requirements or resource needs.
 
 - **Other:**
-   - Rows with null values in the specified subset ("date" and "ticker") are removed, ensuring data integrity for subsequent analysis.
+   - Null values in the specified subset ("date" and "ticker") are eliminated from the dataset to maintain data integrity for further analysis. The number of removed rows is logged for reference.
    - Results and intermediate data are stored in well-structured folders within the S3 Bucket, ensuring a clear and organized layout for easy navigation and future reference.
