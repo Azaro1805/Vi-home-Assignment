@@ -28,7 +28,7 @@
 
 ## AWS Deployment
 1. **Glue Job:**
-   - I made a Glue job with prints [link_to_glue_job](https://us-east-1.console.aws.amazon.com/gluestudio/home?region=us-east-1#/editor/job/aws-glue-home-assignment-or-azar/script)
+   - I made a Glue job with prints [Glue_Job](https://us-east-1.console.aws.amazon.com/gluestudio/home?region=us-east-1#/editor/job/aws-glue-home-assignment-or-azar/script)
 
 2. **Results Storage in S3 Bucket:**
    - Results and intermediate data are stored in the [S3 Bucket](https://s3.console.aws.amazon.com/s3/buckets/aws-glue-home-assignment-or-azar?region=us-east-1&bucketType=general&tab=objects).
