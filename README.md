@@ -2,8 +2,11 @@
 
 ## Table of Contents
 1. [Assumptions](#assumptions)
-2. [AWS Deployment](#aws-deployment)
-3. [Remarks](#remarks)
+2. [Initial Variables Setup](#initial-variables-setup)
+3. [AWS Deployment](#aws-deployment)
+4. [Remarks](#remarks)
+
+5. 
 
 ## Assumptions
 1. **Handling Missing Prices (Q1):**
@@ -14,23 +17,24 @@
 2. **Calculation of Average Daily Return (Q2):**
    - When calculating the average daily return of all stocks for every date, I used the close price of the current date and the close price of the last available day.
    - The last available day is determined based on the approach mentioned in Q1.
-         - Gaps between the current date and the last available day are considered as part of the average daily return.**
-         - The division for calculating the average daily return is not explicitly specified, so it is assumed that it includes the number of days between the current date and the last available day.
 
-3. **Volatility Measurement (Q3):**
-   - The output should provide both the stock ticker and the associated standard deviation for a specific year.
+3. **Result File Completeness Assumption:**
+  - Assumed that saved files encompass the entire dataset with relevant fields, not limited to the top 1 or top 3 records.
 
-4. **Handling Missing 30-Day Prior Closing Prices (Q4):**
-           - In cases where the exact closing price from 30 days prior is unavailable, it is acceptable to omit the calculation of the percentage increase in closing price.
-   
+4. - **Cost Optimization Note:**
+  - The number of nodes has been reduced from the default 10 to 2 for cost optimization. If time sensitivity for the home assignment grade arises, please revert to the default setting of 10 nodes.
 
+## Initial Variables Setup:
+  - **File Name:** `stock_prices.csv` is the required file in the S3 bucket (your bucket) under the "original_files" folder. If modified or changed, update the `file_name` variable accordingly.
+  - **Crawler Wait:** By default, the job doesn't wait for the crawler to complete (`wait_to_crawler = False`). Change this variable to `True` if you want the job to wait for the crawler's successful execution.
+  - 
 ## AWS Deployment
 
 1. **Results Storage in S3 Bucket:**
    - Results and intermediate data are stored in the [S3 Bucket](https://s3.console.aws.amazon.com/s3/buckets/aws-glue-home-assignment-or-azar?region=us-east-1&bucketType=general&tab=objects).
 
 2. **Glue Catalog Table Mapping:**
-   - Glue Catalog Table mapping for each result file is created in the [Glue Catalog Database](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases/view/aws-glue-home-assignment-or-azar?catalogId=249751718460).
+   - Glue Catalog Table mapping for each result file is created in the [Glue Catalog Database](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases/view/aws-glue-home-assignment-or-azar-db?catalogId=249751718460).
 
    - **Average Daily Return Table:**
       - Partitioned by year.
@@ -44,7 +48,7 @@
    - **30-Day Return Dates Table:**
       - Partitioned by year, month, and day.
 
-3. **Athena Querying:**
+4. **Athena Querying:**
    - Make results queryable from [Athena](https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor).
 
      
@@ -61,7 +65,7 @@
   - Crawler-related utilities are organized into notebook cells, setting the stage for future consolidation into a dedicated controller for enhanced manageability.
    
 - **Cost Optimization:**
-  - The number of job nodes has been reduced from the default 5 to 2, ensuring a cost-effective setup. In the future, adjustments may be made based on evolving requirements or resource needs.
+  - The number of job nodes has been reduced from the default 10 to 2, ensuring a cost-effective setup. In the future, adjustments may be made based on evolving requirements or resource needs.
     
 - **Other:**
   - Rows with null values in the specified subset ("date" and "ticker") are removed, ensuring data integrity for subsequent analysis.
