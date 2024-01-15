@@ -67,6 +67,7 @@
 - **Other:**
    - Null values in the specified subset ("date" and "ticker") are eliminated from the dataset to maintain data integrity for further analysis. The number of removed rows is logged for reference.
    - Results and intermediate data are stored in well-structured folders within the S3 Bucket, ensuring a clear and organized layout for easy navigation and future reference.
+   - In the future, if the starting dataset becomes larger, my approach would involve first transferring it to the Glue Catalog, leveraging Athena and Spark for partitioning. This strategy aims to enhance efficiency and streamline subsequent data processing tasks.
 
 ## Bonus - CloudFormation
 
